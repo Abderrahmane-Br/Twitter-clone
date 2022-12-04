@@ -1,0 +1,144 @@
+@mixin optionHover($color) {
+
+    .option__number {
+        color: $color;
+    }
+
+    svg {
+        fill: $color;
+        background-color: rgb($color, 0.3);
+    }
+}
+
+.tweet {
+    // display: flex;
+    // gap: 12px;
+    width: 100%;
+    padding: 12px 16px 0;
+    border-bottom: $twitter-border;
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+
+        * {
+            font-size: 15px;
+            line-height: 20px;
+        }
+    }
+
+    &__profileText {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__profilePic {
+        width: fit-content;
+        margin-right: 12px;
+
+        img {
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__profileName {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    &__username {
+        color: $twitter-gray;
+    }
+
+    &__verifiedBadge {
+        height: 17px;
+        width: 17px;
+        margin-left: 3px;
+    }
+
+    &__content {
+        width: 100%;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    &__media {
+        width: 100%;
+
+        img {
+            border-radius: 15px;
+            width: 100%;
+        }
+    }
+
+    &__description {
+        font-size: 15px;
+        line-height: 20px;
+        margin-bottom: 12px;
+        width: 100%;
+
+        p {
+            white-space: pre-wrap;
+        }
+
+        &__link {
+            color: $text-blue;
+        }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 8px;
+        width: 80%;
+        padding: 3px 0;
+
+        svg {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+    &__option {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        color: $twitter-gray;
+
+        svg {
+            padding: 6px;
+            border-radius: 50%;
+            box-sizing: content-box;
+        }
+
+        .option__number {
+            color: inherit;
+        }
+
+    }
+
+    .--green-icon:hover {
+        @include optionHover(#029262)
+    }
+
+    .--blue-icon:hover {
+        @include optionHover($text-blue)
+    }
+
+    .--red-icon:hover {
+        @include optionHover(#8D114A)
+    }
+
+    &:hover {
+        background-color: lighten($lights-out-color, 5%);
+        cursor: pointer;
+    }
+}

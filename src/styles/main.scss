@@ -1,0 +1,30 @@
+@import 'resets', 'variables', 'navbar', 'feed', 'tweet', 'widgets';
+
+.mainContainer {
+    display: flex;
+}
+
+.nothingHere {
+    margin: 50px auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+.--white-icon {
+    fill: $text-white;
+}
+
+.--blue-icon {
+    fill: $text-blue;
+}
+
+.--twitter-btn {
+    background-color: $twitter-blue;
+    color: $text-white;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.--gray-icon {
+    fill: $twitter-gray;
+}

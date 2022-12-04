@@ -1,0 +1,132 @@
+.navContainer {
+    // flex: 0 10 26.5%;
+    flex: 1.6 5;
+    border-right: $twitter-border;
+    display: flex;
+    justify-content: right;
+    padding: 0 4px;
+}
+
+.navbar {
+    // padding: 0 12px;
+    flex: 0.65 0 0;
+    width: 70%;
+    min-width: fit-content;
+    max-width: 70%;
+
+    &__list {
+        list-style: none;
+        padding: 0;
+
+        li {
+            // padding: 4px 0;
+
+            &:hover {
+                cursor: pointer;
+
+                .item {
+                    background-color: $accent-color;
+                }
+            }
+        }
+
+
+    }
+
+    &__item,
+    &__icon {
+        display: block;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 24px;
+        padding: 12px;
+        width: fit-content;
+        border-radius: $twitter-radius;
+    }
+
+    &__icon {
+        fill: $text-white;
+        width: 2rem;
+        height: 2rem;
+        box-sizing: content-box;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $accent-color;
+        }
+    }
+
+    .tweetBtn {
+        width: 90%;
+
+        &__feather {
+            display: none;
+        }
+
+        &:hover {
+            background-color: darken($twitter-blue, 5%);
+            cursor: pointer;
+        }
+    }
+}
+
+.item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    &.active {
+        font-weight: 500;
+
+    }
+
+    &__icon {
+        height: 1.75rem;
+        width: 1.75rem;
+        fill: $text-white;
+        background-color: transparent;
+    }
+
+    &__text {
+
+        margin-right: 16px;
+        background-color: transparent;
+    }
+
+}
+
+@media (max-width: 1300px) {
+    .navbar {
+        flex-grow: 0;
+
+        .tweetBtn {
+            border-radius: 50%;
+            padding: 10px 8px;
+            box-sizing: border-box;
+
+
+            &__text {
+                display: none;
+            }
+
+            &__feather {
+                width: 27px;
+                height: 27px;
+                display: inline;
+                fill: white;
+            }
+        }
+    }
+
+    .item__text {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 1030px) {
+    .navContainer {
+        flex: 1.5 1;
+    }
+}
